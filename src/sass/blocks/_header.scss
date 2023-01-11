@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 41px 0 49px;
+  &__h1 {
+    color: #000000;
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+}

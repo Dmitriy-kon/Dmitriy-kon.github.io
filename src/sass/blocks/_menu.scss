@@ -1,0 +1,59 @@
+@import "../variables.scss";
+
+.menu {
+  margin-top: 49px;
+  display: flex;
+  flex-direction: column;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__item {
+    transition: 400ms;
+    width: 45px;
+    height: 45px;
+    background-color: $main-color;
+    box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    img {
+      height: 25px;
+      width: 25px;
+    }
+    &:hover {
+      transition: 400ms;
+      background-color: $second-color;
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+    &_active:active {
+      background-color: $second-color;
+    }
+    &:nth-child(n + 2) {
+      margin-top: 25px;
+    }
+  }
+  &__add {
+    transition: 400ms;
+    width: 45px;
+    height: 45px;
+    margin-top: 25px;
+    background-color: $main-color;
+    box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
+    border: 1px solid #cad5ff;
+    border-radius: 14px;
+    cursor: pointer;
+    img {
+      height: 25px;
+      width: 25px;
+    }
+    &:hover {
+      transition: 400ms;
+      background-color: #f7f7f7;
+      border: 3px solid #c8d3ff;
+    }
+  }
+}

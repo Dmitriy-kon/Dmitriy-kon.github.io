@@ -1,0 +1,52 @@
+.habbit {
+  display: flex;
+  background-color: $main-color;
+  border-radius: 10px;
+  min-width: 812px;
+  align-items: center;
+  &__day {
+    background-color: #f5f5f5;
+    padding: 19px 36px 19px 42px;
+    min-width: 140px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+    border-right: 1px solid #e7ebf0;
+    border-radius: 10px 0 0 10px;
+  }
+  &__text {
+    padding: 19px 24px 17px 24px;
+    margin-left: 2px;
+    background: #fdfdfd;
+  }
+  &__delete {
+    transition: 500ms;
+    background: none;
+    margin-left: auto;
+    margin-right: 13px;
+    padding: 3px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+    &:hover {
+      transition: 500ms;
+      background-color: $second-color;
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+  &__form {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    padding: 5px 5px 5px 24px;
+    margin-left: 2px;
+    background: #fdfdfd;
+  }
+}
