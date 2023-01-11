@@ -1,8 +1,9 @@
 .main {
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin: 36px 0 0 41px;
-    }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 36px 0 0 50px;
+    padding-right: 60px;
+  }
 }
