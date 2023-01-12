@@ -1,14 +1,10 @@
 "use strict";
-import { loadData, saveData } from "./utils.js";
-import { page } from "./page.js";
 
-let habbits = [];
-const habbitsKeys = "habbit1";
+const page = {
+  menu: document.querySelector(".menu__list"),
+};
 
-habbits = loadData(habbitsKeys);
-// saveData("habbit2", habbits)
-
-function rerenderMenu(activeHabbid, habbits) {
+export function rerenderMenu(activeHabbid, habbits) {
   // Если привычке нет, то функция не вернет ничего
   if (!activeHabbid) {
     return;
@@ -35,7 +31,7 @@ function createButton(activeHabbid, habbit) {
   const element = document.createElement("button");
   element.setAttribute("menu-habbit-id", habbit.id);
   element.classList.add("menu__item");
-  element.addEventListener("click", () => rerender(habbit.id));
+  element.setAttribute("onclick", `rerender(${habbit.id})`)
   element.innerHTML = `<img src="./icons/${habbit.icon}.svg" alt="${habbit.name}"/>`;
   if (activeHabbid.id === habbit.id) {
     // Если id привычки совпадает
@@ -43,12 +39,3 @@ function createButton(activeHabbid, habbit) {
   }
   page.menu.appendChild(element);
 }
-
-function rerender(activeHabbidId) {
-  // 1. Ищем объект habbit с ID, который совпадает с аргументом
-  //
-  const activeHabbid = habbits.find((habbit) => habbit.id === activeHabbidId);
-  rerenderMenu(activeHabbid, habbits);
-}
-
-rerender(1);

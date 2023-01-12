@@ -31,8 +31,12 @@
         filter: brightness(0) invert(1);
       }
     }
-    &_active:active {
+    &_active {
       background-color: $second-color;
+      img {
+        transition: 300ms;
+        filter: brightness(0) invert(1);
+      }
     }
     &:nth-child(n + 2) {
       margin-top: 50px;
