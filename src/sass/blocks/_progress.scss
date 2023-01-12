@@ -24,8 +24,8 @@
     margin-top: 12px;
   }
   &__cover-bar {
+    transition: 500ms;
     position: absolute;
-    width: 80%;
     height: 10px;
     background-color: $second-color;
     border-radius: 8px;
