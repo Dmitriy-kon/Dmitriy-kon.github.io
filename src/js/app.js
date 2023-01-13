@@ -16,9 +16,11 @@ habbits = loadData(habbitsKeys);
 const hashId = Number(document.location.hash.replace("#", ""));
 const urlHabbitId = habbits.find((habbit) => habbit.id == hashId);
 
-if (urlHabbitId) {
-  console.log(urlHabbitId.id);
-  rerender(urlHabbitId.id, habbits);
-} else {
-  rerender(1, habbits);
-}
+// if (urlHabbitId) {
+//   console.log(urlHabbitId.id);
+//   rerender(urlHabbitId.id, habbits);
+// } else {
+//   rerender(1, habbits);
+// }
+
+rerender(1, habbits)
