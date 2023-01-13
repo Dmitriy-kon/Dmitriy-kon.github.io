@@ -13,4 +13,12 @@ const habbitsKeys = "habbit1";
 
 habbits = loadData(habbitsKeys);
 
-rerender(1, habbits);
+const hashId = Number(document.location.hash.replace("#", ""));
+const urlHabbitId = habbits.find((habbit) => habbit.id == hashId);
+
+if (urlHabbitId) {
+  console.log(urlHabbitId.id);
+  rerender(urlHabbitId.id, habbits);
+} else {
+  rerender(1, habbits);
+}

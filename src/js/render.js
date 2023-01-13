@@ -4,9 +4,8 @@ import { renderHead } from "./renderHead.js";
 import { renderContent } from "./renderContent.js";
 import { page } from "./page.js";
 
-let globalActiveHabbidId
-let globalHabbits
-
+let globalActiveHabbidId;
+let globalHabbits;
 
 function rerenderMenu(activeHabbid, habbits) {
   // Если привычке нет, то функция не вернет ничего
@@ -50,6 +49,9 @@ function rerender(activeHabbidId, habbits) {
   let activeHabbid = habbits.find((habbit) => habbit.id === activeHabbidId);
   globalActiveHabbidId = activeHabbidId;
   globalHabbits = habbits;
+
+  document.location.replace(document.location.pathname + "#" + activeHabbidId);
+
   rerenderMenu(activeHabbid, habbits);
   renderHead(activeHabbid);
   renderContent(activeHabbid);
