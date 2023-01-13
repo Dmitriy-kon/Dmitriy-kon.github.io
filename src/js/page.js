@@ -14,5 +14,6 @@ export const page = {
   },
   popup: {
     index: document.getElementById("add-habbit-popup"),
+    iconField: document.querySelector(".popup__form input[name='icon']")
   },
 };

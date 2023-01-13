@@ -53,13 +53,13 @@
           <h2 class="popup__h2">Новая привычка</h2>
           <div class="popup__icon-label">Иконка</div>
           <div class="popup__icon-selector">
-            <button class="popup__icon popup_icon-active">
-              <img src="./icons/gira.svg" alt="Отжимания" />
+            <button class="popup__icon popup_icon-active" onclick="setIcon(this, 'sport')">
+              <img src="./icons/sport.svg" alt="Отжимания" />
             </button>
-            <button class="popup__icon">
+            <button class="popup__icon" onclick="setIcon(this, 'water')">
               <img src="./icons/Water.svg" alt="вода" />
             </button>
-            <button class="popup__icon">
+            <button class="popup__icon" onclick="setIcon(this, 'food')">
               <img src="./icons/food.svg" alt="еда" />
             </button>
           </div>
@@ -70,6 +70,13 @@
               type="text"
               name="name"
               placeholder="Название"
+            />
+            <input
+              class="input__icon popup_input"
+              type="text"
+              name="icon"
+              value="sport"
+              placeholder="иконка"
             />
             <input
               class="input__icon popup_input"
