@@ -2,36 +2,28 @@
 
 import { globalActiveHabbidId, globalHabbits, rerender } from "./render.js";
 import { saveData } from "./utils.js";
+import { validateForm, resetForm } from "./validateForm.js";
 
 function addDays(event) {
   event.preventDefault();
 
-  const formElement = event.target;
-  const data = new FormData(formElement);
-  const comment = data.get("comment");
-
-  addError(formElement, comment);
-
-  const habbits = addDataDays(formElement, comment);
-  saveData("habbit1", habbits);
-  rerender(globalActiveHabbidId, habbits);
-}
-
-function addError(form, comment) {
-  // добавляет класс ошибки на input, если он пустой
-  form["comment"].classList.remove("input__error");
-  if (!comment) {
-    form["comment"].classList.add("input__error");
+  const data = validateForm(event.target, ["comment"]);
+  if (!data) {
+    return;
   }
+
+  const habbits = addDataDays(data);
+  rerender(globalActiveHabbidId, habbits);
+  resetForm(event.target, ["comment"]);
+  saveData("habbit1", habbits);
 }
 
-function addDataDays(form, comment) {
-  form["comment"].value = "";
+function addDataDays(data) {
   const habbits = globalHabbits.map((habbit) => {
     if (habbit.id === globalActiveHabbidId) {
       return {
         ...habbit,
-        days: habbit.days.concat([{ comment }]),
+        days: habbit.days.concat([{ comment: data.comment }]),
       };
     }
     return habbit;

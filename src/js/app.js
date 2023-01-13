@@ -6,6 +6,7 @@ import { addDays } from "./addDays.js";
 import { deleteDay } from "./deleteDay.js";
 import { togglePopup } from "./togglePopup.js";
 import { setIcon } from "./setIcon.js";
+import { addHabbit } from "./addHabit.js";
 
 let habbits = [];
 const habbitsKeys = "habbit1";
