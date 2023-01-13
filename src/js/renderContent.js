@@ -18,7 +18,7 @@ function renderDays(day, number) {
   const habbit = document.createElement("div");
   habbit.classList.add("habbit");
 
-  habbit.innerHTML = `<div class="habbit__day">День ${number}</div><div class="habbit__text">${day.comment}</div><button class="habbit__delete" onclick='deleteDay(${number - 1})'><img src="icons/delete.svg" alt="" /></button>`;
+  habbit.innerHTML = `<div class="habbit__day">День ${number}</div><div class="habbit__text">${day.comment}</div><button class="habbit__delete" onclick='deleteDay(${number - 1})'><img src="./src/icons/delete.svg" alt="" /></button>`;
   page.habbits.appendChild(habbit);
 }
 

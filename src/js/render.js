@@ -35,7 +35,7 @@ function createButton(activeHabbid, habbit, habbits) {
   element.setAttribute("menu-habbit-id", habbit.id);
   element.classList.add("menu__item");
   element.addEventListener("click", () => rerender(habbit.id, globalHabbits));
-  element.innerHTML = `<img src="./icons/${habbit.icon}.svg" alt="${habbit.name}"/>`;
+  element.innerHTML = `<img src="./src/icons/${habbit.icon}.svg" alt="${habbit.name}"/>`;
   if (activeHabbid.id === habbit.id) {
     // Если id привычки совпадает
     element.classList.add("menu__item_active");
