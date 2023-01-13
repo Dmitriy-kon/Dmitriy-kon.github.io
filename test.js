@@ -1,10 +1,15 @@
-function test1(x) {
-    let some = test2(x)
-    return some
-}
+let onj = {
+  id: 1,
+  icon: "sport",
+  name: "Отжимания",
+  target: 10,
+  days: [
+    { comment: "Первый подход всегда дается тяжело" },
+    { comment: "Второй уже проще" },
+  ],
+};
 
-function test2(x) {
-    return x * 2
-}
-
-console.log(test1(2))
+console.log({
+  ...onj,
+  days: onj.days.concat([{ comment: "тестирование" }]),
+});
