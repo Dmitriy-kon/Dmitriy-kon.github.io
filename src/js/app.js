@@ -4,6 +4,7 @@ import { page } from "./page.js";
 import { rerender } from "./render.js";
 import { addDays } from "./addDays.js";
 import { deleteDay } from "./deleteDay.js";
+import { togglePopup } from "./togglePopup.js";
 
 let habbits = [];
 const habbitsKeys = "habbit1";
@@ -11,10 +12,3 @@ const habbitsKeys = "habbit1";
 habbits = loadData(habbitsKeys);
 
 rerender(1, habbits);
-
-// function addDays(event) {
-//   event.preventDefault();
-//   console.log(event);
-// }
-
-// window.addDays = addDays

@@ -12,4 +12,7 @@ export const page = {
     day: document.querySelector(".habbit__day"),
     text: document.querySelector(".habbit__text"),
   },
+  popup: {
+    index: document.getElementById("add-habbit-popup"),
+  },
 };
